@@ -1,0 +1,507 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ConsultasPFventas",
+    "dateExported": "2024-02-23T17:33:04.815Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "Admin",
+            "containerId": "",
+            "created": "2024-02-22T23:27:27.132Z",
+            "sortNum": 10000,
+            "settings": {
+                "headers": [
+                    {
+                        "name": "token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ3ZmE5NGZiNDUyZmE4ODdkZjQ5OTAiLCJ1c2VybmFtZSI6ImRhYmFkIiwibmFtZSI6IkRlbmlzIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA4NzA2Njc1LCJleHAiOjE3MDg3OTMwNzV9.1M0fW4eLSwVAHOZ6Xoo1NlSlpl2PlgqOktwJsJgyowk"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "Client",
+            "containerId": "",
+            "created": "2024-02-22T23:27:35.311Z",
+            "sortNum": 20000,
+            "settings": {
+                "headers": [
+                    {
+                        "name": "token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ3ZmFiOWZiNDUyZmE4ODdkZjQ5OTIiLCJ1c2VybmFtZSI6InNzYW50b3MiLCJuYW1lIjoiU2ViYXN0aWFuIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcwODcwNjcxMCwiZXhwIjoxNzA4NzkzMTEwfQ.BXLHwWhUbAI7DtZGjmzi0B-BOIPbmzrI4C5dmXQD7Fo"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "fdc0811d-5e33-4796-b67a-149affa9f103",
+            "name": "EVERYONE",
+            "containerId": "",
+            "created": "2024-02-23T04:57:29.671Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "65d110a5-1f3d-4e3c-a74f-d2fae2c8fe59",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "fdc0811d-5e33-4796-b67a-149affa9f103",
+            "name": "Register client",
+            "url": "registerU",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T23:50:00.528Z",
+            "modified": "2024-02-23T04:57:59.681Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Sebastian"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Santos"
+                    },
+                    {
+                        "name": "username",
+                        "value": "ssantoss"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "ssantos-2021374@kinal.edu.gt"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "role",
+                        "value": "",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "a3e7a13f-3f62-4072-bdd8-f45d9d168977",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "Test",
+            "url": "testU",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-23T01:36:06.248Z",
+            "modified": "2024-02-23T02:00:40.263Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "49623c8c-4be9-4a7b-b28a-acd7c8572d4f",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "fdc0811d-5e33-4796-b67a-149affa9f103",
+            "name": "Login",
+            "url": "login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T23:56:47.135Z",
+            "modified": "2024-02-23T16:45:10.322Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "ssantos"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e9fe4b69-d59c-4202-893a-a716b05276c0",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "get Categories",
+            "url": "getCategories",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-22T23:52:42.879Z",
+            "modified": "2024-02-23T02:36:02.083Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e38686a9-6076-46e5-84c5-95aa9fc4989d",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "Register admin",
+            "url": "registerA",
+            "method": "POST",
+            "sortNum": 42500,
+            "created": "2024-02-22T23:32:37.101Z",
+            "modified": "2024-02-23T02:44:22.903Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "David"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Martinez"
+                    },
+                    {
+                        "name": "username",
+                        "value": "dako"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "dako-2021374@kinal.edu.gt"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "role",
+                        "value": "",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "5f83f058-297b-418c-a7d1-eaaa8ba0ce10",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "get Products",
+            "url": "getProducts",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-22T23:53:30.983Z",
+            "modified": "2024-02-23T02:35:48.646Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "52b589fc-a61a-44a9-b105-c17373dadda1",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "search Product",
+            "url": "searchProduct",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-02-22T23:53:39.542Z",
+            "modified": "2024-02-23T02:35:54.171Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": "Laptop"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "45db29f1-e4d7-41ea-9343-32d7e4a62a85",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "add product",
+            "url": "addProduct",
+            "method": "POST",
+            "sortNum": 75000,
+            "created": "2024-02-22T23:56:05.030Z",
+            "modified": "2024-02-23T02:02:41.714Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Mando PS5"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Mando de la playstation 5"
+                    },
+                    {
+                        "name": "price",
+                        "value": "600"
+                    },
+                    {
+                        "name": "brand",
+                        "value": "Playstation"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "80"
+                    },
+                    {
+                        "name": "category",
+                        "value": "65cc2dd0eeb7eb2ee74b96a3"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d556f373-e44b-4bd0-a4a9-48e164a12076",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "update product",
+            "url": "updateProduct/65d7fcfe69623cbc3c83d4f8",
+            "method": "PUT",
+            "sortNum": 81250,
+            "created": "2024-02-22T23:55:48.534Z",
+            "modified": "2024-02-23T02:04:53.578Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "description",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Mando PS4"
+                    },
+                    {
+                        "name": "description",
+                        "value": "",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "brand",
+                        "value": "",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "price",
+                        "value": "",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "stock",
+                        "value": "",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "category",
+                        "value": "",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d9bf323e-f156-4d15-8e2e-62c19989f73e",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "delete product",
+            "url": "deleteProduct/65d7fcfe69623cbc3c83d4f8",
+            "method": "DELETE",
+            "sortNum": 87500,
+            "created": "2024-02-22T23:55:35.503Z",
+            "modified": "2024-02-23T02:07:31.763Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f63053f8-386f-4eed-bc30-f1976dabcac3",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "add category",
+            "url": "addCategory",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-02-22T23:56:17.814Z",
+            "modified": "2024-02-23T02:09:25.620Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Herramientas"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Herramientas de contruccion"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e8f0e36d-feb7-4f74-8832-3ac06baf7372",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "update category",
+            "url": "updateCategory/65d7fe5569623cbc3c83d4ff",
+            "method": "PUT",
+            "sortNum": 105000,
+            "created": "2024-02-22T23:53:15.096Z",
+            "modified": "2024-02-23T02:10:05.215Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Herramientas"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Contruccion herramientas"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "15fa5bc6-5f05-4bc1-b0ed-0ac07a0ec8ec",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "26168a64-cdc0-4112-98d1-cf1c09d99559",
+            "name": "delete category",
+            "url": "deleteCategory/",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-02-22T23:56:26.486Z",
+            "modified": "2024-02-23T02:12:17.182Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a6f43e27-f283-49f7-8e69-a4037afd702d",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "Sold out products",
+            "url": "soldOutProducts",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-02-23T02:32:45.000Z",
+            "modified": "2024-02-23T02:33:19.026Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7deb1640-fa44-463f-a426-98b5973420e6",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "delete user",
+            "url": "deleteU/65d825d74b4c7c2570921f71",
+            "method": "DELETE",
+            "sortNum": 160000,
+            "created": "2024-02-22T23:57:08.606Z",
+            "modified": "2024-02-23T04:58:26.089Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "178b0708-30e2-41c8-9757-1354e6189b3c",
+            "colId": "3757d503-98ab-4b58-9e53-2e1df1c411bd",
+            "containerId": "ace823fb-2507-43c7-99bf-c1b0162e679c",
+            "name": "update user",
+            "url": "updateU/65d7e0b8ee2762393aee5e45",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2024-02-22T23:57:01.569Z",
+            "modified": "2024-02-23T00:04:36.411Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Omar"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Castillo"
+                    },
+                    {
+                        "name": "username",
+                        "value": "ocastillo"
+                    },
+                    {
+                        "name": "password",
+                        "value": "87654321",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "email",
+                        "value": "ocastillo@kinal.edu.gt"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:3056/"
+        }
+    }
+}
