@@ -21,6 +21,9 @@ const productSchema = Schema({
         type: Number,
         required: true
     },
+    sold: {
+        type: Number,
+    },
     category: {
         type: Schema.Types.ObjectId,
         ref: 'category',

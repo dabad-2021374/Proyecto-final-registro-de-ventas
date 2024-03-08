@@ -1,6 +1,7 @@
 'use strict'
 
 import Category from './category.model.js'
+import Product from '../product/product.model.js'
 import { checkUpdate } from '../utils/validator.js'
 
 export const addCategory = async (req, res) => {
@@ -57,6 +58,9 @@ export const deleteCategory = async(req, res)=>{
     try{
         //Capturar el id de la 'categoria' a eliminar
         let { id } = req.params
+
+        let defaultCategory = await Category.findOne({ name: 'Default' });
+        await Product.updateMany({ category: id }, { category: defaultCategory._id });
         //Eliminar
         let deletedCategory = await Category.deleteOne({_id: id})
         //Validar que se eliminó
@@ -66,5 +70,36 @@ export const deleteCategory = async(req, res)=>{
     }catch(err){
         console.error(err)
         return res.status(404).send({message: 'Error deleting category'})
+    }
+}
+
+export const defaultCategory = async () => {
+    try {
+        let createCategory = await Category.findOne({ name: 'Default' });
+        if (createCategory) {
+            return; 
+        }
+        let data = {
+            name: 'Default',
+            description: 'Categoria por defecto'
+        }
+        let category = new Category(data)
+        await category.save()
+
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+export const getProductsForCategory = async (req, res) => {
+    try {
+        let { id } = req.params;
+        let category = await Category.findById(id);
+        if (!category) return res.status(404).send({ message: 'Categorie not found' })
+        let products = await Product.find({ category: id });
+        return res.send({ category, products });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).send({ message: 'Error fetching category and products', err: err });
     }
 }

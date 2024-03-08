@@ -8,6 +8,8 @@ import cors from 'cors'
 import categoryRoutes from '../src/category/category.routes.js'
 import productRoutes from '../src/product/product.routes.js'
 import userRoutes from '../src/user/user.routes.js'
+import buyRoutes from '../src/buy/buy.router.js'
+import billRoutes from '../src/bill/bill.routes.js'
 
 const app = express()
 config()
@@ -22,6 +24,8 @@ app.use(cors())
 app.use(categoryRoutes)
 app.use(productRoutes)
 app.use(userRoutes)
+app.use(buyRoutes)
+app.use(billRoutes)
 
 //Levantar servidor
 export const initServer = ()=>{

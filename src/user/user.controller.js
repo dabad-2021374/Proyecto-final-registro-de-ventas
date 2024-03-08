@@ -3,6 +3,7 @@
 import User from './user.model.js'
 import { encrypt, checkPassword, checkUpdate } from '../utils/validator.js'
 import { generateJwt } from '../utils/jwt.js'
+import Buy from '../buy/buy.model.js'
 
 export const testU = (req, res) => {
     console.log('test is running')
@@ -11,16 +12,11 @@ export const testU = (req, res) => {
 
 export const registerU = async (req, res) => {
     try {
-        //Capturar el formulario (body)
         let data = req.body
-        //Encriptar la contraseña
         data.password = await encrypt(data.password)
-        //Asignar el rol por defecto
         data.role = 'CLIENT'
-        //Guardar la información en la BD
         let user = new User(data)
-        await user.save() //Guardar en la BD
-        //Responder al usuario
+        await user.save()
         return res.send({ message: `Registered successfully, can be logged with username ${user.username}` })
     } catch (err) {
         console.error(err)
@@ -30,16 +26,11 @@ export const registerU = async (req, res) => {
 
 export const registerA = async (req, res) => {
     try {
-        //Capturar el formulario (body)
         let data = req.body
-        //Encriptar la contraseña
         data.password = await encrypt(data.password)
-        //Asignar el rol por defecto
         data.role = 'ADMIN'
-        //Guardar la información en la BD
         let user = new User(data)
-        await user.save() //Guardar en la BD
-        //Responder al usuario
+        await user.save() 
         return res.send({ message: `Registered successfully, can be logged with username ${user.username}` })
     } catch (err) {
         console.error(err)
@@ -47,35 +38,29 @@ export const registerA = async (req, res) => {
     }
 }
 
-export const login = async(req, res)=>{
-    try{
-        //Capturar los datos (body)
-        let { username, password } = req.body
-        //Validar que el usuario exista
-        let user = await User.findOne({username}) //buscar un solo registro
-        //Verifico que la contraseña coincida
-        if(user && await checkPassword(password, user.password)){
-            let loggedUser = {
+export const login = async (req, res) => {
+    try {
+        const { username, email, password } = req.body
+        const user = await User.findOne({ 
+            $or: [{ username }, { email }] 
+        })
+        if (!user) {
+            return res.status(404).send({ message: 'Invalid username or email' })
+        }
+        if (await checkPassword(password, user.password)) {
+            const loggedUser = {
                 uid: user._id,
                 username: user.username,
-                name: user.name,
-                role: user.role
+                name: user.name
             }
-            //Generar el Token
-            let token = await generateJwt(loggedUser)
-            //Respondo al usuario
-            return res.send(
-                {
-                    message: `Welcome ${loggedUser.name}`, 
-                    loggedUser,
-                    token
-                }
-            )
+            const Buys = await Buy.find({ user: user._id })
+            const token = await generateJwt(loggedUser)
+            return res.send({ message: `Welcome ${loggedUser.name}`, loggedUser, token, message1: 'HISTORY BUYS', Buys })
         }
-        return res.status(404).send({message: 'Invalid credentials'})
-    }catch(err){
-        console.error(err)
-        return res.status(500).send({message: 'Error to login'})
+        return res.status(404).send({ message: 'Invalid password' })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error logging in', error })
     }
 }
 
@@ -85,6 +70,9 @@ export const updateU = async (req, res) => { //Datos generales (No password)
         let { id } = req.params
         //Obtener los datos a actualizar
         let data = req.body
+        let user = await User.findOne({ _id: id })
+        if (!user) return res.status(404).send({ message: 'User not found' })
+        if (req.user._id.toString() !== user._id.toString()) return res.status(403).send({ message: 'Unauthorized to update for this user' })
         //Validar si data trae datos
         let update = checkUpdate(data, id)
         if (!update) return res.status(400).send({ message: 'Have submitted some data that cannot be updated or missing data' })
@@ -106,19 +94,40 @@ export const updateU = async (req, res) => { //Datos generales (No password)
     }
 }
 
-export const deleteU = async (req, res) => {
-    try {
-        //Obtener el Id
+export const deleteU = async(req, res)=>{
+    try{
         let { id } = req.params
-        //Validar si está logeado y es el mismo X No lo vemos hoy X
-        //Eliminar (deleteOne (solo elimina no devuelve el documento) / findOneAndDelete (Me devuelve el documento eliminado))
-        let deletedUser = await User.findOneAndDelete({ _id: id })
-        //Verificar que se eliminó
-        if (!deletedUser) return res.status(404).send({ message: 'Account not found and not deleted' })
-        //Responder
-        return res.send({ message: `Account with username ${deletedUser.username} deleted successfully` }) //status 200
-    } catch (err) {
+        let user = await User.findOne({ _id: id })
+        if (!user) return res.status(404).send({ message: 'User not found' })
+        if (req.user._id.toString() !== user._id.toString()) return res.status(403).send({ message: 'Unauthorized to update for this user' })
+        let deletedUser = await User.findOneAndDelete({_id: id}) 
+        if(!deletedUser) return res.status(404).send({message: 'Account not found and not deleted'})
+        return res.send({message: `Account with username ${deletedUser.username} deleted successfully`})
+    }catch(err){
         console.error(err)
-        return res.status(500).send({ message: 'Error deleting account' })
+        return res.status(500).send({message: 'Error deleting account'})
+    }
+}
+
+export const defaultAdmin = async () => {
+    try {
+        const createUser = await User.findOne({ username: 'default' })
+        if (createUser) {
+            return; 
+        }
+        let data = {
+            name: 'default',
+            surname: 'default',
+            username: 'default',
+            email: 'default@kinal.edu.gt',
+            phone: '12345678',
+            password: await encrypt('123'),
+            role: 'ADMIN'
+        }
+        let user = new User(data)
+        await user.save()
+        console.log('Admin for default created with username "default" and password "123"')
+    } catch (error) {
+        console.error(error)
     }
 }

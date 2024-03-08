@@ -6,8 +6,8 @@ import { checkUpdate } from '../utils/validator.js'
 export const addProduct = async (req, res) => {
     try {
         let data = req.body
-        console.log(data)
-
+        data.sold = 0
+        
         let product = new Product(data)
         await product.save()
 
@@ -20,7 +20,7 @@ export const addProduct = async (req, res) => {
 
 export const getProducts = async (req, res) => {
     try {
-        let products = await Product.find();
+        let products = await Product.find().populate('category', ['name'])
         return res.send({products});
     } catch (err) {
         console.error(err);
@@ -98,5 +98,16 @@ export const deleteProduct= async(req, res)=>{
     }catch(err){
         console.error(err)
         return res.status(404).send({message: 'Error deleting product'})
+    }
+}
+
+export const filterMoreSold = async (req, res) => {
+    try {
+        let products = await Product.find().sort({ sold: -1 })
+
+        return res.send({ products })
+    } catch (err) {
+        console.error(err)
+        return res.status(500).send({ message: 'Error fetching products' })
     }
 }
