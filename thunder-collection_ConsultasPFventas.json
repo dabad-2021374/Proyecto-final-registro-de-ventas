@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "ConsultasPFventas",
-    "dateExported": "2024-03-08T13:21:39.701Z",
+    "dateExported": "2024-03-09T01:40:15.012Z",
     "version": "1.1",
     "folders": [
         {
@@ -14,7 +14,7 @@
                 "headers": [
                     {
                         "name": "authorization",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhOWY1NTkzNGNkZmIyZTI3NmMyYmMiLCJ1c2VybmFtZSI6ImRlZmF1bHQiLCJuYW1lIjoiZGVmYXVsdCIsImlhdCI6MTcwOTg3NTE0MCwiZXhwIjoxNzA5OTYxNTQwfQ.2jGbsgpTvXDVol06Zanq6PC9Tl587lAxBfUvPKYO1lo"
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhOWY1NTkzNGNkZmIyZTI3NmMyYmMiLCJ1c2VybmFtZSI6ImRlZmF1bHQiLCJuYW1lIjoiZGVmYXVsdCIsImlhdCI6MTcwOTk0ODIxMSwiZXhwIjoxNzEwMDM0NjExfQ.WOy3LVWn16calQ-xk3XAegsC9IpJuAUZwGhiDxIGtiM"
                     }
                 ]
             }
@@ -29,7 +29,7 @@
                 "headers": [
                     {
                         "name": "authorization",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZmE3MDc5ZWQ3ZTI5ZDk5OWJiM2QiLCJ1c2VybmFtZSI6InNzYW50b3NzIiwibmFtZSI6IlNlYmFzIiwiaWF0IjoxNzA5ODk4MzU2LCJleHAiOjE3MDk5ODQ3NTZ9.7VouKVesqCEbvtLVqD9s7zMjTz7kTLNAqFh2VgSxYI8"
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ3ZmFiOWZiNDUyZmE4ODdkZjQ5OTIiLCJ1c2VybmFtZSI6InNzYW50b3MiLCJuYW1lIjoiU2ViYXN0aWFuIiwiaWF0IjoxNzA5OTQ4MTYxLCJleHAiOjE3MTAwMzQ1NjF9.WCPm4gDzurVsz5oy--DlE6tJlUrLXrAPchaZaRHOF0s"
                     }
                 ]
             }
@@ -52,7 +52,7 @@
             "method": "PUT",
             "sortNum": 3750,
             "created": "2024-03-04T21:17:14.268Z",
-            "modified": "2024-03-08T11:25:29.020Z",
+            "modified": "2024-03-09T01:23:12.349Z",
             "headers": [],
             "params": [],
             "body": {
@@ -81,7 +81,8 @@
                     },
                     {
                         "name": "email",
-                        "value": "ssantos-2021374@kinal.edu.gt"
+                        "value": "ssantos-2021374@kinal.edu.gt",
+                        "isDisabled": true
                     },
                     {
                         "name": "phone",
@@ -90,8 +91,7 @@
                     },
                     {
                         "name": "role",
-                        "value": "ADMIN",
-                        "isDisabled": true
+                        "value": "CLIENT"
                     }
                 ]
             },
@@ -99,15 +99,15 @@
             "tests": []
         },
         {
-            "_id": "c1532c81-b7cb-42f4-ab81-2fb3f42a564c",
+            "_id": "bff51120-dc7e-41c3-be10-b9d12f5bc8ad",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
-            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
-            "name": "Buy",
-            "url": "handleCart",
+            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
+            "name": "Register admin",
+            "url": "registerA",
             "method": "POST",
-            "sortNum": 7500,
-            "created": "2024-03-04T22:35:59.807Z",
-            "modified": "2024-03-08T05:23:13.484Z",
+            "sortNum": 5000,
+            "created": "2024-03-04T21:17:14.256Z",
+            "modified": "2024-03-09T01:38:16.649Z",
             "headers": [],
             "params": [],
             "body": {
@@ -115,16 +115,28 @@
                 "raw": "",
                 "form": [
                     {
-                        "name": "productId",
-                        "value": "65e8ebceb7109ad2c433eb9b"
+                        "name": "name",
+                        "value": "Denis"
                     },
                     {
-                        "name": "quantity",
-                        "value": "2"
+                        "name": "surname",
+                        "value": "Abad"
                     },
                     {
-                        "name": "confirm",
-                        "value": "confirm"
+                        "name": "username",
+                        "value": "dabad"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "dabad-2021374@kinal.edu.gt"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
                     }
                 ]
             },
@@ -140,7 +152,7 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-04T21:17:14.257Z",
-            "modified": "2024-03-08T11:35:01.084Z",
+            "modified": "2024-03-09T01:36:19.703Z",
             "headers": [],
             "params": [],
             "body": {
@@ -157,7 +169,7 @@
                     },
                     {
                         "name": "username",
-                        "value": "ssantoss"
+                        "value": "ssantos"
                     },
                     {
                         "name": "password",
@@ -170,11 +182,6 @@
                     {
                         "name": "phone",
                         "value": "12345678"
-                    },
-                    {
-                        "name": "role",
-                        "value": "",
-                        "isDisabled": true
                     }
                 ]
             },
@@ -204,7 +211,7 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-03-04T21:17:14.267Z",
-            "modified": "2024-03-08T11:35:17.134Z",
+            "modified": "2024-03-09T01:36:50.861Z",
             "headers": [],
             "params": [],
             "body": {
@@ -213,11 +220,11 @@
                 "form": [
                     {
                         "name": "username",
-                        "value": "ssantoss"
+                        "value": "default"
                     },
                     {
                         "name": "password",
-                        "value": "12345678"
+                        "value": "123"
                     },
                     {
                         "name": "email",
@@ -244,15 +251,54 @@
             "tests": []
         },
         {
-            "_id": "bff51120-dc7e-41c3-be10-b9d12f5bc8ad",
+            "_id": "9f6f2279-6eae-4eee-bc2b-74f3a49cc458",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "get Products",
+            "url": "getProducts",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2024-03-04T21:17:14.260Z",
+            "modified": "2024-03-04T21:17:14.260Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4eca2169-6024-44ab-8b27-57c5e037e0e6",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "ProductbyCoincidence",
+            "url": "prodByCoinci",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-03-09T00:18:43.867Z",
+            "modified": "2024-03-09T00:31:43.654Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": "Man"
+                    }
+                ]
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "37823d9c-4b4a-45e1-8697-79bad3223601",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
             "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
-            "name": "Register admin",
-            "url": "registerA",
+            "name": "add category",
+            "url": "addCategory",
             "method": "POST",
             "sortNum": 42500,
-            "created": "2024-03-04T21:17:14.256Z",
-            "modified": "2024-03-04T21:17:14.256Z",
+            "created": "2024-03-04T21:17:14.265Z",
+            "modified": "2024-03-04T22:38:35.713Z",
             "headers": [],
             "params": [],
             "body": {
@@ -261,49 +307,68 @@
                 "form": [
                     {
                         "name": "name",
-                        "value": "Sebas"
+                        "value": "Herramientas"
                     },
                     {
-                        "name": "surname",
-                        "value": "Santos"
-                    },
-                    {
-                        "name": "username",
-                        "value": "ssantos"
-                    },
-                    {
-                        "name": "password",
-                        "value": "12345678"
-                    },
-                    {
-                        "name": "email",
-                        "value": "dako-2021374@kinal.edu.gt"
-                    },
-                    {
-                        "name": "phone",
-                        "value": "12345678"
-                    },
-                    {
-                        "name": "role",
-                        "value": "",
-                        "isDisabled": true
+                        "name": "description",
+                        "value": "Categoria de herramientas"
                     }
                 ]
             },
+            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "9f6f2279-6eae-4eee-bc2b-74f3a49cc458",
+            "_id": "fb15a6b2-eada-461a-9c9e-b89603f3f72d",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
             "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
-            "name": "get Products",
-            "url": "getProducts",
-            "method": "GET",
-            "sortNum": 50000,
-            "created": "2024-03-04T21:17:14.260Z",
-            "modified": "2024-03-04T21:17:14.260Z",
+            "name": "CategoyByCoincidence ",
+            "url": "searchCategByCoinci",
+            "method": "POST",
+            "sortNum": 45000,
+            "created": "2024-03-09T00:25:23.113Z",
+            "modified": "2024-03-09T00:29:00.708Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": ""
+                    }
+                ]
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "3c469178-66c4-4276-bd25-81799ab06c49",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
+            "name": "update category",
+            "url": "updateCategory/65d7fe5569623cbc3c83d4ff",
+            "method": "PUT",
+            "sortNum": 58750,
+            "created": "2024-03-04T21:17:14.259Z",
+            "modified": "2024-03-04T21:17:14.259Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Herramientas"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Contruccion herramientas"
+                    }
+                ]
+            },
             "tests": []
         },
         {
@@ -329,6 +394,20 @@
                 ]
             },
             "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "29313f38-3a82-4495-802a-27baf412f08e",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
+            "name": "delete product",
+            "url": "deleteProduct/65d7fcfe69623cbc3c83d4f8",
+            "method": "DELETE",
+            "sortNum": 66875,
+            "created": "2024-03-04T21:17:14.262Z",
+            "modified": "2024-03-04T21:17:14.262Z",
+            "headers": [],
+            "params": [],
             "tests": []
         },
         {
@@ -438,77 +517,6 @@
             "tests": []
         },
         {
-            "_id": "29313f38-3a82-4495-802a-27baf412f08e",
-            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
-            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
-            "name": "delete product",
-            "url": "deleteProduct/65d7fcfe69623cbc3c83d4f8",
-            "method": "DELETE",
-            "sortNum": 87500,
-            "created": "2024-03-04T21:17:14.262Z",
-            "modified": "2024-03-04T21:17:14.262Z",
-            "headers": [],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "37823d9c-4b4a-45e1-8697-79bad3223601",
-            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
-            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
-            "name": "add category",
-            "url": "addCategory",
-            "method": "POST",
-            "sortNum": 100000,
-            "created": "2024-03-04T21:17:14.265Z",
-            "modified": "2024-03-04T22:38:35.713Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "formencoded",
-                "raw": "",
-                "form": [
-                    {
-                        "name": "name",
-                        "value": "Herramientas"
-                    },
-                    {
-                        "name": "description",
-                        "value": "Categoria de herramientas"
-                    }
-                ]
-            },
-            "reqType": "post",
-            "tests": []
-        },
-        {
-            "_id": "3c469178-66c4-4276-bd25-81799ab06c49",
-            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
-            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
-            "name": "update category",
-            "url": "updateCategory/65d7fe5569623cbc3c83d4ff",
-            "method": "PUT",
-            "sortNum": 105000,
-            "created": "2024-03-04T21:17:14.259Z",
-            "modified": "2024-03-04T21:17:14.259Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "formencoded",
-                "raw": "",
-                "form": [
-                    {
-                        "name": "name",
-                        "value": "Herramientas"
-                    },
-                    {
-                        "name": "description",
-                        "value": "Contruccion herramientas"
-                    }
-                ]
-            },
-            "tests": []
-        },
-        {
             "_id": "92330801-2c2b-4c3b-95a6-ba6a212f5c7f",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
             "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
@@ -553,17 +561,32 @@
             "tests": []
         },
         {
-            "_id": "7c823eef-340a-4d78-9804-9a4b2e1584b6",
+            "_id": "7560a30c-ec30-4081-9131-1654b73b26bc",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
-            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
-            "name": "Sold out products",
-            "url": "soldOutProducts",
-            "method": "GET",
-            "sortNum": 150000,
-            "created": "2024-03-04T21:17:14.271Z",
-            "modified": "2024-03-04T21:17:14.271Z",
+            "containerId": "728da1e3-5044-4cf6-8f49-a0e3cd86f9cc",
+            "name": "update role",
+            "url": "updateRole/65d7fab9fb452fa887df4992",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-03-09T01:26:32.119Z",
+            "modified": "2024-03-09T01:32:50.886Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "role",
+                        "value": "ADMIN",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "role",
+                        "value": "CLIENT"
+                    }
+                ]
+            },
             "tests": []
         },
         {
@@ -582,6 +605,31 @@
             "tests": []
         },
         {
+            "_id": "e0970446-43c4-427d-a7cd-6dc1f8058971",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "searchProductForCategory",
+            "url": "searProdForCate",
+            "method": "POST",
+            "sortNum": 205000,
+            "created": "2024-03-09T00:08:40.634Z",
+            "modified": "2024-03-09T01:39:16.570Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": "Tecnologia"
+                    }
+                ]
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
             "_id": "91007d1f-a094-4da4-8b43-7f8adb28a231",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
             "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
@@ -596,18 +644,17 @@
             "tests": []
         },
         {
-            "_id": "24fe66a1-085e-44fe-b8ee-6297ca8ce29a",
+            "_id": "7c823eef-340a-4d78-9804-9a4b2e1584b6",
             "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
             "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
-            "name": "Print bill",
-            "url": "printBill/65eaa08acbdf89b8e34d0ab1",
+            "name": "Sold out products",
+            "url": "soldOutProducts",
             "method": "GET",
-            "sortNum": 230000,
-            "created": "2024-03-08T01:41:56.895Z",
-            "modified": "2024-03-08T05:25:27.334Z",
+            "sortNum": 225000,
+            "created": "2024-03-04T21:17:14.271Z",
+            "modified": "2024-03-04T21:17:14.271Z",
             "headers": [],
             "params": [],
-            "reqType": "get",
             "tests": []
         },
         {
@@ -623,6 +670,112 @@
             "headers": [],
             "params": [],
             "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "559f8ffa-97bb-4c1c-90aa-336ce7935ea5",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "update password",
+            "url": "updatePass",
+            "method": "POST",
+            "sortNum": 250000,
+            "created": "2024-03-09T00:36:08.300Z",
+            "modified": "2024-03-09T00:42:08.388Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "ssantos"
+                    },
+                    {
+                        "name": "oldPassword",
+                        "value": "87654321"
+                    },
+                    {
+                        "name": "newPassword",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "c1532c81-b7cb-42f4-ab81-2fb3f42a564c",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "Buy",
+            "url": "handleCart",
+            "method": "POST",
+            "sortNum": 255000,
+            "created": "2024-03-04T22:35:59.807Z",
+            "modified": "2024-03-09T01:40:03.981Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "productId",
+                        "value": "65e8ebceb7109ad2c433eb9b"
+                    },
+                    {
+                        "name": "quantity",
+                        "value": "1"
+                    },
+                    {
+                        "name": "confirm",
+                        "value": "confirm",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "24fe66a1-085e-44fe-b8ee-6297ca8ce29a",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "Print bill",
+            "url": "printBill/65ebb504029536b936824140",
+            "method": "GET",
+            "sortNum": 257500,
+            "created": "2024-03-08T01:41:56.895Z",
+            "modified": "2024-03-09T01:12:00.680Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "ff894541-01e4-4a0e-a6a0-e0aa75e442b7",
+            "colId": "b2616748-cd8e-415b-b39b-02a5d22d6e46",
+            "containerId": "40af8f95-dcf2-4d25-b04b-a31a3b0a77c1",
+            "name": "History user",
+            "url": "history",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2024-03-09T00:47:48.218Z",
+            "modified": "2024-03-09T01:10:03.934Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "ssantos"
+                    }
+                ]
+            },
             "tests": []
         }
     ],

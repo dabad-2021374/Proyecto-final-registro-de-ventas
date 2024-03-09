@@ -33,7 +33,7 @@ export const updateCategory = async (req, res) => {
     try {
         //Capturar la data
         let data = req.body
-        //Capturar el id del animal a actualizar
+        //Capturar el id de la categoria a actualizar
         let { id } = req.params
         //Validar que vengan datos
         let update = checkUpdate(data, false)
@@ -101,5 +101,40 @@ export const getProductsForCategory = async (req, res) => {
     } catch (err) {
         console.error(err);
         return res.status(500).send({ message: 'Error fetching category and products', err: err });
+    }
+}
+
+export const searchProductsForCategory = async (req, res) => {
+    try {
+        let { search } = req.body;
+
+        // Buscar la categoría por su nombre
+        const category = await Category.findOne({ name: search });
+        if (!category) {
+            return res.status(404).send({ message: 'Category not found' });
+        }
+
+        // Buscar los productos asociados a la categoría
+        const products = await Product.find({ category: category._id });
+
+        // Devolver la categoría y sus productos asociados
+        return res.send({ category, products });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).send({ message: 'Error fetching category and products', err });
+    }
+}
+
+export const searchCategByCoinci = async (req, res) => {
+    try {
+        let { search } = req.body
+        let categories = await Category.find({ name: { $regex: search, $options: 'i' } })
+        if (categories.length === 0) {
+            return res.status(404).send({ message: 'Categories not found' })
+        }
+        return res.send({ categories })
+    } catch (err) {
+        console.error(err);
+        return res.status(500).send({ message: 'Error searching categories', err })
     }
 }

@@ -111,3 +111,17 @@ export const filterMoreSold = async (req, res) => {
         return res.status(500).send({ message: 'Error fetching products' })
     }
 }
+
+export const productByCoincidence = async (req, res) => {
+    try {
+        let { search } = req.body
+        let products = await Product.find({ name: { $regex: search, $options: 'i' } })
+            .populate('category', ['name', 'description'])
+        if (products.length === 0) return res.status(404).send({ message: 'Products not found' })
+        return res.send({ products })
+    } catch (err) {
+        console.error(err)
+        return res.status(500).send({ message: 'Error searching products', err })
+    }
+}
+

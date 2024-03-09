@@ -69,7 +69,7 @@ export const printBill = async (req, res) => {
 
         let user = await User.findById(bill.user)
         if (!user) return res.status(404).send({ message: 'User not found' })
-
+        if (req.user._id.toString() !== user._id.toString()) return res.status(403).send({ message: 'Unauthorized print bill for this buy' })
         //------------------------------------------------------------
         //crear el PDF
         let doc = new PDFDocument()
@@ -126,5 +126,23 @@ export const printBill = async (req, res) => {
     } catch (error) {
         console.error(error)
         return res.status(500).send({ message: 'Error generating bill PDF' })
+    }
+}
+
+export const getBillsByUser = async (req, res) => {
+    try {
+        let { username } = req.body
+        let user = await User.findOne({ username })
+        if (req.user._id.toString() !== user._id.toString()) return res.status(403).send({ message: 'Unauthorized viwe history for this user' })
+        if (!user) return res.status(404).send({ message: 'User not found' })
+        const bills = await Bill.find({ user: user._id }).populate({
+            path: 'products.product',
+            select: 'name price',
+            model: 'product'
+        })
+        return res.send({ message: 'User purchase history:', bills })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error fetching bills by user' })
     }
 }

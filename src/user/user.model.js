@@ -36,8 +36,6 @@ const userSchema = mongoose.Schema({
         enum: ['ADMIN', 'CLIENT'],
         required: true
     }
-}, {
-    versionKey: false
 })
 
 export default mongoose.model('user', userSchema)

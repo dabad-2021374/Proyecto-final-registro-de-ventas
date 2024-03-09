@@ -94,6 +94,35 @@ export const updateU = async (req, res) => { //Datos generales (No password)
     }
 }
 
+export const updateRole = async (req, res) => {
+    try {
+        // Obtener el id del usuario a actualizar
+        const { id } = req.params;
+
+        // Obtener el nuevo rol del usuario desde el body
+        const { role } = req.body;
+
+        // Verificar si el nuevo rol es válido
+        if (!['ADMIN', 'CLIENT'].includes(role.toUpperCase())) return res.status(400).send({ message: 'Invalid role' });
+
+        // Buscar el usuario por su id
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+
+        // Actualizar el rol del usuario
+        user.role = role.toUpperCase();
+        const updatedUser = await user.save();
+
+        // Responder al usuario con el usuario actualizado
+        return res.send({ message: 'User role updated successfully', updatedUser });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({ message: 'Error updating user role' });
+    }
+}
+
 export const deleteU = async(req, res)=>{
     try{
         let { id } = req.params
@@ -129,5 +158,27 @@ export const defaultAdmin = async () => {
         console.log('Admin for default created with username "default" and password "123"')
     } catch (error) {
         console.error(error)
+    }
+}
+
+export const updatePass = async (req, res) => {
+    try {
+        const { username, oldPassword, newPassword } = req.body;
+        let user = await User.findOne({ username });
+
+        //Solo el usuario puede actualizar su password
+        if (req.user._id.toString() !== user._id.toString()) return res.status(403).send({ message: 'Unauthorized to update password for this user' })
+        
+        // Verificar si el usuario existe y si la contraseña antigua es valida
+        if (user && await checkPassword(oldPassword, user.password)) {
+            const encryptedNewPassword = await encrypt(newPassword);
+            user.password = encryptedNewPassword;
+            await user.save();
+            return res.send({ message: 'Password updated successfully' });
+        }
+        return res.status(400).send({ message: 'Invalid username or old password' });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).send({ message: 'Error updating password' });
     }
 }
