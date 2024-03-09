@@ -14,7 +14,30 @@ export const handleCart = async (req, res) => {
         //inicializar el carrito
         userCarts[req.user._id] = userCarts[req.user._id] || []
 
-        let { productId, quantity, confirm } = req.body
+        let { productId, quantity, confirm, deleteProductId } = req.body
+
+        //eliminar un producto dentro del carrito
+        if (deleteProductId) {
+            const updatedCart = userCarts[req.user._id].filter(item => item.product !== deleteProductId);
+            if (updatedCart.length !== userCarts[req.user._id].length) {
+                userCarts[req.user._id] = updatedCart;
+                return res.send({ message: 'Product removed from cart', cart: userCarts[req.user._id] });
+            } else {
+                return res.status(404).send({ message: 'Product not found in cart' });
+            }
+        }
+
+        //actualizar la cantidad del producto en el carrito
+        if (productId && quantity) {
+            let existingProduct = userCarts[req.user._id].find(item => item.product === productId);
+            if (existingProduct) {
+                existingProduct.quantity = quantity;
+                return res.send({ message: 'Product quantity updated in cart', cart: userCarts[req.user._id] });
+            } else {
+                userCarts[req.user._id].push({ product: productId, quantity });
+                return res.send({ message: 'Product added to cart', cart: userCarts[req.user._id] });
+            }
+        }
 
         //si se confirma la compra
         if (confirm === 'confirm') {

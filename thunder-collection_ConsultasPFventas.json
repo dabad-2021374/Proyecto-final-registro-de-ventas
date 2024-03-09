@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "ConsultasPFventas",
-    "dateExported": "2024-03-09T01:40:15.012Z",
+    "dateExported": "2024-03-09T03:48:14.148Z",
     "version": "1.1",
     "folders": [
         {
@@ -714,7 +714,7 @@
             "method": "POST",
             "sortNum": 255000,
             "created": "2024-03-04T22:35:59.807Z",
-            "modified": "2024-03-09T01:40:03.981Z",
+            "modified": "2024-03-09T03:48:05.709Z",
             "headers": [],
             "params": [],
             "body": {
@@ -727,11 +727,16 @@
                     },
                     {
                         "name": "quantity",
-                        "value": "1"
+                        "value": "5"
                     },
                     {
                         "name": "confirm",
                         "value": "confirm",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "deleteProductId",
+                        "value": "65e8ea4b9eb6f6c8d649f959",
                         "isDisabled": true
                     }
                 ]
